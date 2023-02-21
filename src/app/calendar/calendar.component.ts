@@ -11,6 +11,7 @@ import { Event } from '../event';
 export class CalendarComponent implements OnInit {
 
   events: Event[] = [];
+  filtreType!: string;
 
   constructor (
     private eventsService: EventsService,
@@ -23,6 +24,26 @@ export class CalendarComponent implements OnInit {
 
   getEvents():void{
     this.eventsService.getEvents()
+    .subscribe(events => this.events = events);
+  }
+
+  filter(filtreType:string):void{
+    if(filtreType === ''){
+      this.eventsService.getEvents()
+      .subscribe(events => this.events = events);
+    }else{
+      this.eventsService.getEventsByType(filtreType)
+      .subscribe((events: Event[]) => this.events = events);
+    }
+  }
+
+  sortById():void{
+    this.eventsService.getEvents()
+    .subscribe(events => this.events = events);
+  }
+
+  sortByTime():void{
+    this.eventsService.sortEventsByTime()
     .subscribe(events => this.events = events);
   }
 

@@ -1,3 +1,23 @@
+<div class="pure-g">
+    <form class="pure-form pure-u-1-2">
+        <label for="type">Type : </label>
+        <select id="type" name="filtreType" [(ngModel)]="filtreType">
+            <option value="" selected>Tout</option>
+            <option value="Routine">Routine</option>
+            <option value="Repas">Repas</option>
+            <option value="Travail">Travail</option>
+            <option value="Loisir">Loisir</option>
+        </select>
+        <button class="pure-button pure-button" (click)="filter(filtreType)">Filtrer</button>
+    </form>
+    <div class="pure-u-1-2">
+        <label>Trier par : </label>
+        <button class="pure-button pure-button" (click)="sortById()">Id</button>
+        <label>/</label>
+        <button class="pure-button pure-button" (click)="sortByTime()">Heure</button>
+    </div>
+</div><br>
+
 <table class="pure-table pure-table-horizontal">
     <thead>
         <tr>

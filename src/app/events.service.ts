@@ -28,6 +28,14 @@ export class EventsService {
     return this.http.get<Event[]>(this.eventsUrl);
   }
 
+  getEventsByType(type:string):Observable<Event[]>{
+    return this.http.get<Event[]>(this.eventsUrl+'?type='+type);
+  }
+
+  sortEventsByTime():Observable<Event[]>{
+    return this.http.get<Event[]>(this.eventsUrl+'?_sort=time&_order=asc');
+  }
+
   addEvent(event: Event):Observable<Event>{
     return this.http.post<Event>(this.eventsUrl, event, this.httpOptions);
   }
