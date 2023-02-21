@@ -1,1 +1,22 @@
-<p>calendar works!</p>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>ID No</th>
+            <th>title</th>
+            <th>time</th>
+            <th>type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of events">
+            <td>{{ event.id }}</td>
+            <td>{{ event.title }}</td>
+            <td>{{ event.time }}</td>
+            <td>{{ event.type }}</td>
+            <td>
+                <button>edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
