@@ -36,7 +36,7 @@ export class EventsService {
     return this.http.delete<Event>(this.eventsUrl+'/'+id, this.httpOptions);
   }
 
-  updateEvent(event: Event):Observable<Event>{
-    return this.http.put<Event>(this.eventsUrl+'/'+event.id, event, this.httpOptions);
+  updateEvent(event: Event):Observable<any>{
+    return this.http.put(this.eventsUrl+'/'+event.id, event, this.httpOptions);
   }
 }

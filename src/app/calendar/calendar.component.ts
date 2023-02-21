@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EventsService } from '../events.service';
 import { Event } from '../event';
 
@@ -11,7 +12,10 @@ export class CalendarComponent implements OnInit {
 
   events: Event[] = [];
 
-  constructor (private eventsService: EventsService) {}
+  constructor (
+    private eventsService: EventsService,
+    private router: Router  
+  ) {}
 
   ngOnInit():void{
     this.getEvents();
@@ -26,10 +30,12 @@ export class CalendarComponent implements OnInit {
     let id = parseInt(idStr);
     this.eventsService.deleteEvent(id)
     .subscribe((d) => this.getEvents);
+    location.reload();
   }
 
   edit(event: Event){
-    
+    this.eventsService.currentEvent = Object.assign({}, event);
+    this.router.navigate(['/events/add']);
   }
 
 }
