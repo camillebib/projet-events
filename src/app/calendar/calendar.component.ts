@@ -28,4 +28,8 @@ export class CalendarComponent implements OnInit {
     .subscribe((d) => this.getEvents);
   }
 
+  edit(event: Event){
+    
+  }
+
 }

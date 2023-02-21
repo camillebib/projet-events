@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div id="menu">
+    <nav class="pure-menu">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a class="pure-menu-link" routerLink="/events">Liste</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link" routerLink="/events/add">Ajout</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="main">
+    <div class="header">
+        <h1>{{title | uppercase}}</h1>
+    </div>
+    <div class="content"><router-outlet></router-outlet></div>
+</div>

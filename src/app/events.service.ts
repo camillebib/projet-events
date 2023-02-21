@@ -35,4 +35,8 @@ export class EventsService {
   deleteEvent(id: Number):Observable<Event>{
     return this.http.delete<Event>(this.eventsUrl+'/'+id, this.httpOptions);
   }
+
+  updateEvent(event: Event):Observable<Event>{
+    return this.http.put<Event>(this.eventsUrl+'/'+event.id, event, this.httpOptions);
+  }
 }

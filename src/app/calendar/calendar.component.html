@@ -1,10 +1,12 @@
-<table class="table mt-4">
+<table class="pure-table pure-table-horizontal">
     <thead>
         <tr>
             <th>ID No</th>
-            <th>title</th>
-            <th>time</th>
-            <th>type</th>
+            <th>Titre</th>
+            <th>Heure</th>
+            <th>Type</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -13,10 +15,8 @@
             <td>{{ event.title }}</td>
             <td>{{ event.time }}</td>
             <td>{{ event.type }}</td>
-            <td>
-                <button>Editer</button>
-                <button (click)="delete(event.id)">Supprimer</button>
-            </td>
+            <td><button class="pure-button" (click)="edit(event)">Editer</button></td>
+            <td><button class="pure-button delete" (click)="delete(event.id)">Supprimer</button></td>
         </tr>
     </tbody>
 </table>
