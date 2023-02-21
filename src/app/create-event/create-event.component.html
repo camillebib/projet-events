@@ -1,0 +1,11 @@
+<form>
+    <input type="text" name="title" [(ngModel)]="eventsService.currentEvent.title">
+    <input type="text" name="time" [(ngModel)]="eventsService.currentEvent.time">
+    <select name="type" [(ngModel)]="eventsService.currentEvent.type">
+        <option value="Routine">Routine</option>
+        <option value="Repas">Repas</option>
+        <option value="Travail">Travail</option>
+        <option value="Loisir">Loisir</option>
+    </select>
+    <button (click)="add(eventsService.currentEvent)">Ajouter event</button>
+</form>

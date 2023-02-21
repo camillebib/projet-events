@@ -13,6 +13,13 @@ export class EventsService {
 
   private eventsUrl = 'http://localhost:3000/events';
 
+  currentEvent: Event = {
+    id: '',
+    title:'',
+    time:'',
+    type:''
+  }
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
