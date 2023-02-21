@@ -14,7 +14,7 @@ export class EventsService {
   private eventsUrl = 'http://localhost:3000/events';
 
   currentEvent: Event = {
-    id: '',
+    id:'',
     title:'',
     time:'',
     type:''
@@ -30,5 +30,9 @@ export class EventsService {
 
   addEvent(event: Event):Observable<Event>{
     return this.http.post<Event>(this.eventsUrl, event, this.httpOptions);
+  }
+
+  deleteEvent(id: Number):Observable<Event>{
+    return this.http.delete<Event>(this.eventsUrl+'/'+id, this.httpOptions);
   }
 }

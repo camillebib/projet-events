@@ -14,8 +14,8 @@
             <td>{{ event.time }}</td>
             <td>{{ event.type }}</td>
             <td>
-                <button>edit</button>
-                <button>Delete</button>
+                <button>Editer</button>
+                <button (click)="delete(event.id)">Supprimer</button>
             </td>
         </tr>
     </tbody>

@@ -22,4 +22,10 @@ export class CalendarComponent implements OnInit {
     .subscribe(events => this.events = events);
   }
 
+  delete(idStr:string){
+    let id = parseInt(idStr);
+    this.eventsService.deleteEvent(id)
+    .subscribe((d) => this.getEvents);
+  }
+
 }
