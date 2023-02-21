@@ -1,0 +1,14 @@
+<form class="pure-form pure-form-stacked">
+    <label for="title">Titre</label>
+    <input id="title" type="text" name="title" [(ngModel)]="eventsService.currentEvent.title">
+    <label for="time">Heure (HH:MM)</label>
+    <input id="time" type="text" name="time" [(ngModel)]="eventsService.currentEvent.time">
+    <label for="type">Type</label>
+    <select id="type" name="type" [(ngModel)]="eventsService.currentEvent.type">
+        <option value="Routine">Routine</option>
+        <option value="Repas">Repas</option>
+        <option value="Travail">Travail</option>
+        <option value="Loisir">Loisir</option>
+    </select><br>
+    <button class="pure-button pure-button-primary" (click)="addOrUpdate(eventsService.currentEvent)">Valider</button>
+</form>
